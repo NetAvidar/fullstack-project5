@@ -5,4 +5,5 @@ function AlbumsPage() {
     </div>
   );
 }
+
 export default AlbumsPage;
