@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import CompleteRegistration from "./pages/CompleteRegistration";
 import HomePage from "./pages/HomePage";
 import TodosPage from "./pages/TodosPage";
 import PostsPage from "./pages/PostsPage";
@@ -11,6 +12,7 @@ function App() {
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<SignUpPage />} />
+      <Route path="/complete-register" element={<CompleteRegistration />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/todos" element={<TodosPage />} />
       <Route path="/posts" element={<PostsPage />} />
