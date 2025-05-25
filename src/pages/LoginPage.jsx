@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useLogin from "../hooks/useLogin";
+import "../css/login.css"
 
 function LoginPage() {
 
@@ -44,26 +45,28 @@ function LoginPage() {
 
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="login-container">
+      <h2 className="login-title">Login</h2>
+      <form onSubmit={handleSubmit} className="login-form">
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
+          className="login-input"
         /><br/>
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
+          className="login-input"
         /><br/>
-        <button type="submit">Login</button> <br/><br/>
+        <button type="submit" className="login-button">Login</button>
 
-        <button onClick={handleSendToRegister}>Not sign up yet</button>
+        <button onClick={handleSendToRegister} className="signup-button" >Not sign up yet</button>
       </form>
-      {error && <p style={{color: 'red'}}>{error}</p>}
+      {error && <p className="error-message" >{error}</p>}
     </div>
   );
 }

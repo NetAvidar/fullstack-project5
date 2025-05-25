@@ -1,0 +1,72 @@
+/* עיצוב כללי לעמוד */
+.login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  text-align: center;
+  background-color: #fafafa;
+}
+
+/* כותרת */
+.login-title {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 26px;
+}
+
+/* הטופס */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* שדות הקלט */
+.login-input {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* כפתור כניסה */
+.login-button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #45a049;
+}
+
+/* כפתור הרשמה */
+.signup-button {
+  padding: 10px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #1976D2;
+}
+
+/* הודעת שגיאה */
+.error-message {
+  color: red;
+  margin-top: 15px;
+  font-weight: bold;
+}

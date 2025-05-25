@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
+import "../css/signUp.css"
 
 
 function CompleteRegistration() {
@@ -77,14 +78,15 @@ function CompleteRegistration() {
  
 
     return (
-    <div>
-        <h2>Complete Registration</h2>
-        <form onSubmit={handleSubmit}>
+    <div className="signup-container">
+        <h2 className="signup-title">Complete Registration</h2>
+        <form onSubmit={handleSubmit} className="signup-form">
             <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Full Name"
+                className="signup-input"
             /><br />
 
             <input
@@ -92,6 +94,7 @@ function CompleteRegistration() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
+                className="signup-input"
             /><br />
 
             <input
@@ -99,6 +102,7 @@ function CompleteRegistration() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Phone"
+                className="signup-input"
             /><br />
 
 
@@ -107,6 +111,7 @@ function CompleteRegistration() {
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
                 placeholder="Company Name"
+                className="signup-input"
             /><br />
 
             <input
@@ -114,6 +119,7 @@ function CompleteRegistration() {
                 value={street}
                 onChange={(e) => setStreet(e.target.value)}
                 placeholder="Street"
+                className="signup-input"
             /><br />
 
             <input
@@ -121,6 +127,7 @@ function CompleteRegistration() {
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 placeholder="City"
+                className="signup-input"
             /><br />
 
             <input
@@ -128,9 +135,10 @@ function CompleteRegistration() {
                 value={zipcode}
                 onChange={(e) => setZipcode(e.target.value)}
                 placeholder="Zip Code"
+                className="signup-input"
             /><br />
 
-            <button type="submit">Complete Registration</button>
+            <button type="submit" className="signup-button">Complete Registration</button>
         </form>
     </div>
     );

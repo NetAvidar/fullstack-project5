@@ -1,0 +1,111 @@
+/* מבנה עמוד */
+.todo-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fdfdfd;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* כותרת */
+.todo-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 32px;
+}
+
+/* כפתורים וסינונים */
+.todo-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.todo-controls label {
+  font-weight: bold;
+  color: #444;
+}
+
+.todo-controls select,
+.todo-controls input[type="text"] {
+  padding: 8px 12px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.todo-controls button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.todo-controls button:hover {
+  background-color: #45a049;
+}
+
+/* טבלה */
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.todo-table th,
+.todo-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-table th {
+  background-color: #f0f0f0;
+  color: #555;
+  font-weight: bold;
+}
+
+.todo-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.todo-table input[type="text"] {
+  padding: 6px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-table input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+.todo-table button {
+  background-color: #e53935;
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.todo-table button:hover {
+  background-color: #c62828;
+}
+
+/* הודעה כשאין רשומות */
+.no-todos {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  font-style: italic;
+}
