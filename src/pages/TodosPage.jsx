@@ -27,15 +27,17 @@ function TodoList() {
 
 
   useEffect(() => {
+    if (userId){
     fetch(`http://localhost:3005/todos?userId=${userId}`)
       .then(res => res.json())
       .then(data => setTodos(data))
-      .catch(console.error);
+      .catch(console.error);}
   }, [userId]);
 
 
   function handleAddTodo() {
-    const newTodo = {
+    const newTodo = { 
+      
       userId,
       id: Date.now().toString(), 
       title: "New Task",

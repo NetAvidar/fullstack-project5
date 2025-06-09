@@ -1,40 +1,47 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
- function useRegister (key, initialValue){
+function useRegister() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [passVerification, setPassVerification] = useState("");
+  const [isRegistSucceed, setIsRegistSucceed] = useState(false);
+  const [error, setError] = useState("");
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [passVerification, setPassVerification] = useState("");
-    const [isRegistSucceed , setIsRegistSucceed] = useState(false);
-    const [error, setError] = useState("");
+  const register = async () => {
+    try {
+      const response = await fetch(`http://localhost:3005/users?username=${username}`);
+      const data = await response.json();
 
-    const register = () => {
-        const savedPassword = localStorage.getItem(username);
-        if (savedPassword != null) {
-            setError("Name already taken");
-            return;
-        }
+      if (data.length > 0) {
+        setError("Name already taken");
+        setIsRegistSucceed(false);
+        return;
+      }
 
-        if (password === passVerification) {
-            localStorage.setItem(username, password);
-            setIsRegistSucceed(true);
-            setError("");
-            localStorage.setItem('currentUser',username);
-        } else {
-            setError("Password confirmation doesn't match");
-        }   
-    };
+      if (password === passVerification) {
+        setIsRegistSucceed(true);
+        setError("");
+        localStorage.setItem("currentUser", username);
+      } else {
+        setError("Password confirmation doesn't match");
+      }
 
-    return {
-        username,
-        setUsername,
-        password,
-        setPassword,
-        passVerification,
-        setPassVerification,
-        isRegistSucceed,
-        error,
-        register,
+    } catch (err) {
+      console.error("Error registering user:", err);
+      setError("An error occurred while registering.");
+    }
+  };
+
+  return {
+    username,
+    setUsername,
+    password,
+    setPassword,
+    passVerification,
+    setPassVerification,
+    isRegistSucceed,
+    error,
+    register,
   };
 }
 
